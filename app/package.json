@@ -1,0 +1,33 @@
+{
+	"name": "@heksagon/app",
+	"version": "0.0.4",
+	"description": "Shared abastractions for application layer in DDD architecture",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jigjoy-ai/heksagon.git"
+	},
+	"author": "Miodrag Vilotijević",
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"prepublishOnly": "npm run build",
+		"format": "prettier --write \"src/**/*.{ts,tsx}\""
+	},
+	"keywords": [],
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^24.7.2",
+		"prettier": "^3.7.4",
+		"tsup": "^8.0.2",
+		"typescript": "^5.3.3"
+	}
+}
