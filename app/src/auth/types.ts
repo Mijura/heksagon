@@ -10,3 +10,5 @@ export type AuthContext =
 	| { type: "internal"; service: string; data: UserData; internalToken: string }
 	| { type: "user"; data: UserData }
 	| { type: "apiKey"; keyId: string; data: UserData }
+
+export type AuthenticatedAuthContext = Exclude<AuthContext, { type: "public" }>
