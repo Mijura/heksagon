@@ -7,11 +7,6 @@
   resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.27.3.tgz"
   integrity sha512-Czi8yzXUWIQYAtL/2y6vogER8pvcsOsk5cpwL4Gk5nJqH5UZiVByIY8Eorm5R13gq+DQKYg0+JyQoytLQas4dA==
 
-"@jigjoy-ai/auth-context@^0.0.2":
-  version "0.0.2"
-  resolved "https://npm.pkg.github.com/download/@jigjoy-ai/auth-context/0.0.2/91ce36fc88fe3da16eb172aeda217571890ebbe7"
-  integrity sha512-VktYAquQOxD/dXXQqed/pcTGzowv5hFw2q7yY3Fxm7dq+/50AqJ47qpRRopOIwBtULriO5cFU2EmzRMNom5ygg==
-
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.13"
   resolved "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz"

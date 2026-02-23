@@ -7,10 +7,10 @@
   resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.27.3.tgz"
   integrity sha512-Czi8yzXUWIQYAtL/2y6vogER8pvcsOsk5cpwL4Gk5nJqH5UZiVByIY8Eorm5R13gq+DQKYg0+JyQoytLQas4dA==
 
-"@heksagon/app@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@heksagon/app/-/app-0.0.8.tgz"
-  integrity sha512-+YDNgmrduSZLYpI4R5kd4EecYfADcvY1se60jsZFcez1nA4vubAFH/g4DC2jtlrPfDTEChHyFsx1EaS90/GAWg==
+"@heksagon/app@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.npmjs.org/@heksagon/app/-/app-0.0.14.tgz"
+  integrity sha512-F15tH5D4LCXmg3C4v/q2CpQvzKOn2LwzBktorTuIi8MK8AZDlK+OsYnyRP0r041tb8mkFCgJD/ORIQ5oEhDo4A==
 
 "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.13"
