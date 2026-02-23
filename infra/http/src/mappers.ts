@@ -1,4 +1,4 @@
-import { Auth, AuthType } from "@heksagon/app"
+import { Auth } from "@heksagon/app"
 import { AuthError } from "./error"
 
 function h(headers: any, name: string): string | undefined {
@@ -6,51 +6,50 @@ function h(headers: any, name: string): string | undefined {
 	return Array.isArray(v) ? v[0] : v
 }
 
-export function extractAuth(headers: any): Auth<unknown> {
-	const type = h(headers, "x-auth-type") as AuthType | undefined
-	if (!type) throw new AuthError("Missing x-auth-type")
+export function extractAuthData(headers: any): Auth<any> {
 
-	const dataString = h(headers, "x-data")
+	const dataString = h(headers, "X-Auth-Data")
 
-	if (!dataString) throw new AuthError("Missing x-data")
+	if (!dataString) throw new AuthError("Missing X-Auth-Data")
 	const data = JSON.parse(dataString)
 
-	if (type === "internal-token") {
-		const auth: Auth<unknown> = {
-			type: "internal-token",
-			data: data,
-		}
-
-		return auth
+	const auth: Auth<any> = {
+		data: data,
 	}
 
-	if (type === "bearer-token") {
-		const auth: Auth<unknown> = {
-			type: "bearer-token",
-			data: data,
-		}
-
-		return auth
-	}
-
-	if (type === "api-key") {
-		const auth: Auth<unknown> = {
-			type: "api-key",
-			data: data,
-		}
-
-		return auth
-	}
-
-	throw new AuthError("Invalid x-auth-type")
+	return auth
 }
 
-export function authToHeaders(auth: Auth<any>): Record<string, string> {
-	const headers: Record<string, string> = {
-		"x-auth-type": auth.type,
-	}
+export function authDataHeaders(auth: Auth<unknown>): Record<string, string> {
+	const headers: Record<string, string> = {}
 
-	headers["x-data"] = JSON.stringify(auth.data)
+	headers["x-auth-data"] = JSON.stringify(auth.data)
 
 	return headers
 }
+
+export function bearerTokenHeaders(bearerToken: string): Record<string, string> {
+	const headers: Record<string, string> = {}
+
+	headers["Authorization"] = `Bearer ${bearerToken}`
+
+	return headers
+}
+
+export function apiKeyHeaders(apiKey: string): Record<string, string> {
+	const headers: Record<string, string> = {}
+
+	headers["x-api-key"] = apiKey
+
+	return headers
+}
+
+export function internalTokenHeaders(internalToken: string, auth: Auth<unknown>): Record<string, string> {
+	let headers: Record<string, string> = {}
+
+	headers["x-internal-token"] = internalToken
+	headers = { ...headers, ...authDataHeaders(auth) }
+
+	return headers
+}
+
