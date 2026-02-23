@@ -16,7 +16,7 @@ export function extractAuth(headers: any): Auth<unknown> {
 	const data = JSON.parse(dataString)
 
 	if (type === "internal-token") {
-		const auth: Auth<any> = {
+		const auth: Auth<unknown> = {
 			type: "internal-token",
 			data: data,
 		}
@@ -25,7 +25,7 @@ export function extractAuth(headers: any): Auth<unknown> {
 	}
 
 	if (type === "bearer-token") {
-		const auth: Auth<any> = {
+		const auth: Auth<unknown> = {
 			type: "bearer-token",
 			data: data,
 		}
@@ -34,7 +34,7 @@ export function extractAuth(headers: any): Auth<unknown> {
 	}
 
 	if (type === "api-key") {
-		const auth: Auth<any> = {
+		const auth: Auth<unknown> = {
 			type: "api-key",
 			data: data,
 		}
