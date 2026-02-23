@@ -34,3 +34,11 @@ To treat architecture as a long-term investment, not a short-term shortcut.
 
 Heksagon is not just a framework.  
 It is our decision to build software differently.
+
+## Hexagonal Three-Layer Architecture as Our Response
+
+Our efforts are moving toward a framework that isolates three layers — Domain, Application, and Infrastructure — making them truly independent from one another.
+
+When these layers are truly decoupled, two things become possible. Developers can read the Domain layer and understand the business they're working in — not from documentation, but from the code itself. And when Infrastructure is genuinely separate, porting an application to a different database, runtime, or cloud provider stops being a rewrite and becomes a substitution.
+
+The domain survives. Only the adapters change.
