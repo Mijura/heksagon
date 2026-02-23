@@ -1,6 +1,6 @@
 {
 	"name": "@heksagon/app",
-	"version": "0.0.6",
+	"version": "0.0.8",
 	"description": "Shared abastractions for application layer in DDD architecture",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",

@@ -1,6 +1,6 @@
 {
 	"name": "@heksagon/http",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "HTTP helpers for auth-context",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
@@ -31,6 +31,6 @@
 		"typescript": "^5.3.3"
 	},
 	"dependencies": {
-		"@heksagon/app": "^0.0.6"
+		"@heksagon/app": "^0.0.8"
 	}
 }

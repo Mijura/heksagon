@@ -1,9 +1,14 @@
-import { AuthenticatedAuthContext } from "../auth/types"
+export type AuthType = "internal-token" | "bearer-token" | "api-key"
 
-export interface PublicUseCase<P, R> {
+export class Auth<T> {
+	data: T
+	type: AuthType
+}
+
+export interface UseCase<P, R> {
 	execute(params: P): Promise<R>
 }
 
-export interface AuthenticatedUseCase<P, R> {
-	execute(params: P, authContext: AuthenticatedAuthContext): Promise<R>
+export interface AuthenticatedUseCase<P, R, A = unknown> {
+	execute(params: P, auth: Auth<A>): Promise<R>
 }
