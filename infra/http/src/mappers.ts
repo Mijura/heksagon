@@ -8,7 +8,7 @@ function h(headers: any, name: string): string | undefined {
 
 export function extractAuthData(headers: any): Auth<any> {
 
-	const dataString = h(headers, "X-Auth-Data")
+	const dataString = h(headers, "x-auth-data") || h(headers, "X-Auth-Data")
 
 	if (!dataString) throw new AuthError("Missing X-Auth-Data")
 	const data = JSON.parse(dataString)
