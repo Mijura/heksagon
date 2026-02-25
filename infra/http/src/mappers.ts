@@ -10,7 +10,7 @@ export function extractAuthData(headers: any): Auth<any> {
 
 	const dataString = h(headers, "x-auth-data") || h(headers, "X-Auth-Data")
 
-	if (!dataString) throw new AuthError("Missing X-Auth-Data")
+	if (!dataString) throw new AuthError("Missing X-Auth-Data or x-auth-data")
 	const data = JSON.parse(dataString)
 
 	const auth: Auth<any> = {

@@ -1,6 +1,6 @@
 {
 	"name": "@heksagon/http",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"description": "HTTP helpers for auth-context",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
